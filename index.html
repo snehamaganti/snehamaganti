@@ -4,63 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-   <div class="player">
-       <div class="wrapper">
-           <div class="details">
-               <div class="now-playing">PLAYING x OF y</div>
-               <div class="track-art"></div>
-               <div class="track-name">Track Name</div>
-               <div class="track-artist">Track Artist</div>
-           </div>
-
-           <div class="slider_container">
-               <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
-           </div>
-
-           <div class="slider_container">
-               <i class="fa fa-volume-down"></i>
-                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                <i class="fa fa-volume-up"></i>
-           </div>
-
-           <div class="buttons">
-               <div class="random-track" onclick="randomTrack()">
-                   <i class="fas fa-random fa-2x" title="random"></i>
-               </div>
-               <div class="prev-track" onclick="prevTrack()">
-                    <i class="fa fa-step-backward fa-2x"></i>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display">
                 </div>
-                <div class="playpause-track" onclick="playpauseTrack()">
-                    <i class="fa fa-play-circle fa-5x"></i>
+                <div>
+                    <input type="button" value="AC" onclick="display.value=' '" class="operator">
+                    <input type="button" value="DEL" onclick="display.value= display.value.toString().slice(0,-1)" class="operator">                   <input type="button" value="." onclick="display.value +='.'" class="operator">
+                    <input type="button" value="/" onclick="display.value +='/'" class="operator">
                 </div>
-                <div class="next-track" onclick="nextTrack()">
-                    <i class="fa fa-step-forward fa-2x"></i>
+                <div>
+                    <input type="button" value="7" onclick="display.value +='7'">
+                    <input type="button" value="8" onclick="display.value +='8'">
+                    <input type="button" value="9"onclick="display.value +='9'" >
+                    <input type="button" value="*" onclick="display.value +='*'" class="operator">
                 </div>
-                <div class="repeat-track" onclick="repeatTrack()">
-                    <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                <div>
+                    <input type="button" value="4" onclick="display.value +='4'">
+                    <input type="button" value="5" onclick="display.value +='5'">
+                    <input type="button" value="6" onclick="display.value +='6'">
+                    <input type="button" value="-" onclick="display.value +='-'" class="operator">
                 </div>
-           </div>
-
-            <div id="wave">
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-            </div>  
-       </div>
-   </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value +='1'">
+                    <input type="button" value="2"onclick="display.value +='2'">
+                    <input type="button" value="3"onclick="display.value +='3'">
+                    <input type="button" value="+"onclick="display.value +='+'" class="operator">
+                </div>
+                <div>
+                    <input type="button" value="00"onclick="display.value +='00'">
+                    <input type="button" value="0"onclick="display.value +='0'">
+                    
+                    <input type="button" value="=" onclick="display.value=eval(display.value)" class="equal operator">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    
 </body>
 </html>
